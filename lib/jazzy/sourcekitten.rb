@@ -270,8 +270,7 @@ module Jazzy
 
     def self.should_mark_undocumented(kind, filepath)
       source_directory = Config.instance.source_directory.to_s
-      (filepath || '').start_with?(source_directory) &&
-        kind != 'source.lang.swift.decl.generic_type_param'
+      (filepath || '').start_with?(source_directory)
     end
 
     def self.process_undocumented_token(doc, declaration)
